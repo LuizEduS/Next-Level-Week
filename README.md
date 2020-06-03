@@ -1,2 +1,2 @@
-# Next-Level-Week
-Prática das aulas da Next Level Week de 2020
+# Next-Level-Week :rocket:
+Este é um repositório dedicado as aulas do Next Level Week do canal Rocketseat!

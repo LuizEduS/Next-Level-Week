@@ -27,7 +27,12 @@ function getCities(event){
     const indexOfSelectedState = event.target.selectedIndex
     stateinput.value = event.target.options[indexOfSelectedState].text
 
+
+
     const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios`
+    cityselect.innerHTML = ""
+    
+    cityselect.disabled = true
     fetch(url)
     //Buscou os Estados
 
@@ -46,3 +51,36 @@ function getCities(event){
 document
     .querySelector("select[name=uf]")
     .addEventListener("change", getCities)
+
+ // itens de coleta 
+
+const collectedItems = document.querySelector("input[name=items]")
+
+ let selectedItems = []
+ const itemscoleta = document.querySelectorAll(".itensgrid li")
+ for (const item of itemscoleta){
+     item.addEventListener("click",handleSelectedItem)
+ }
+
+ function handleSelectedItem(event){
+     const itemli = event.target
+     itemli.classList.toggle("selected")
+     const itemid = itemli.id
+
+     const alreadyselected = selectedItems.findIndex(function(item){
+        const itemfound = item == itemid
+        return itemfound
+
+     })
+
+     if (alreadyselected >= 0){
+         const filtereditens = selectedItems.filter(function(item){
+            const itemisdifferent = item != itemid
+            return itemisdifferent
+         })
+         selectedItems = filtereditens
+     } else{
+         selectedItems.push(itemid)
+     }
+     collectedItems = selectedItems
+}

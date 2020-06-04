@@ -31,23 +31,23 @@
 
                     <div class="field">
                         <label for="">Nome da entidade</label>
-                        <input type="text" name="name">
+                        <input type="text" name="name" required>
                     </div>
                     <div class="fieldgroup">
                         <div class="field">
                             <label for="address">Endereço</label>
-                            <input type="text" name="address">
+                            <input type="text" name="address" required>
                         </div>
                         <div class="field">
                             <label for="address2">Número/complemento</label>
-                            <input type="text" name="address2">
+                            <input type="text" name="address2" required>
                         </div>
                     </div>
 
                     <div class="fieldgroup">
                         <div class="field">
                             <label for="State">Estado</label>
-                            <select name="uf">
+                            <select name="uf"required>
                                 <option value="">Selecione o Estado</option>
                             </select>
                             <input type="hidden" name="state">
@@ -55,10 +55,47 @@
 
                         <div class="field">
                             <label for="city">Cidade</label>
-                            <select name="city" disabled>
+                            <select name="city" disabled required>
                                 <option value="">Selecione a Cidade</option>
                             </select>
                         </div>
+                    </div>
+                </fieldset>
+
+
+
+                <fieldset>
+                    <legend>
+                        <h2>
+                            Itens de coleta
+                        </h2>
+                    </legend>
+                    <div class="itensgrid">
+                        <li id="1">
+                            <img src="/Code/assets/lampadas.svg" alt="Lâmpadas">
+                            <span>Lâmpadas</span>
+                        </li>
+                        <li id="2">
+                            <img src="/Code/assets/baterias.svg" alt="Pilhas e Baterias">
+                            <span>Pilhas e Baterias</span>
+                        </li>
+                        <li id="3">
+                            <img src="/Code/assets/papeis-papelao.svg" alt="Papéis e Papelão">
+                            <span>Papéis e Papelão</span>
+                        </li>
+                        <li id="4">
+                            <img src="/Code/assets/eletronicos.svg" alt="Resíduos Eletrônicos">
+                            <span>Resíduos Eletrônicos</span>
+                        </li>
+                        <li id="5">
+                            <img src="/Code/assets/organicos.svg" alt="Resídos Orgânicos">
+                            <span>Resídos Orgânicos</span>
+                        </li>
+                        <li id="6">
+                            <img src="/Code/assets/oleo.svg" alt="Oléo de Cozinha">
+                            <span>Oléo de Cozinha</span>
+                        </li>
+                        <input type="hidden" name="items">
                     </div>
                 </fieldset>
                 <button type="">Cadastrar ponto de coleta</button>
